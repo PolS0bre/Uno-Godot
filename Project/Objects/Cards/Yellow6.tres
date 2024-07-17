@@ -7,3 +7,4 @@ script = ExtResource("1_2m3xg")
 type = "Normal"
 color = Color(1, 1, 0, 1)
 number = 6
+texture = 26

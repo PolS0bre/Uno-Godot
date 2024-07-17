@@ -1,3 +1,46 @@
-[gd_scene format=3 uid="uid://dqlwodu7n7cin"]
+[gd_scene load_steps=4 format=3 uid="uid://dqlwodu7n7cin"]
+
+[ext_resource type="PackedScene" uid="uid://h4cwnfxdbmqi" path="res://Objects/deck.tscn" id="1_3uvyg"]
+[ext_resource type="PackedScene" uid="uid://d2ora11l4sbfp" path="res://Objects/played_cards.tscn" id="2_e61xg"]
+[ext_resource type="Script" path="res://Scripts/Hand.gd" id="3_8nam8"]
 
 [node name="Game Scene" type="Node2D"]
+
+[node name="Deck" parent="." instance=ExtResource("1_3uvyg")]
+position = Vector2(225, 325)
+
+[node name="Played Cards" parent="." instance=ExtResource("2_e61xg")]
+position = Vector2(598, 325)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PlayerContainer" type="HBoxContainer" parent="UI"]
+anchors_preset = -1
+anchor_left = 0.136285
+anchor_top = 0.731481
+anchor_right = 0.874132
+anchor_bottom = 0.964506
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("3_8nam8")
+metadata/_edit_use_anchors_ = true
+
+[node name="IAContainer" type="HBoxContainer" parent="UI"]
+anchors_preset = -1
+anchor_left = 0.136285
+anchor_top = 0.731481
+anchor_right = 0.874132
+anchor_bottom = 0.964506
+offset_left = 864.0
+offset_top = -304.0
+offset_right = 864.0
+offset_bottom = -304.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 3.14159
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="UI/PlayerContainer" to="UI/PlayerContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/PlayerContainer" to="UI/PlayerContainer" method="_on_mouse_exited"]

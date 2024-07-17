@@ -7,3 +7,4 @@ script = ExtResource("1_wlu47")
 type = "Normal"
 color = Color(0, 0.776471, 0, 1)
 number = 1
+texture = 7

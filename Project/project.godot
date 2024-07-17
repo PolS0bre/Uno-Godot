@@ -11,8 +11,18 @@ config_version=5
 [application]
 
 config/name="Uno"
+config/tags=PackedStringArray("v4.2.2")
+run/main_scene="res://Scenes/game_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://Scripts/GameManager.gd"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [file_customization]
 
@@ -23,3 +33,7 @@ folder_colors={
 "res://Scripts/": "purple",
 "res://Sprites/": "yellow"
 }
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

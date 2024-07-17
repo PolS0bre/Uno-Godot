@@ -7,3 +7,4 @@ script = ExtResource("1_v4drw")
 type = "Normal"
 color = Color(1, 0, 0, 1)
 number = 7
+texture = 29

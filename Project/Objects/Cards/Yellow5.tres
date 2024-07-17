@@ -7,3 +7,4 @@ script = ExtResource("1_nyhjn")
 type = "Normal"
 color = Color(1, 1, 0, 1)
 number = 5
+texture = 22

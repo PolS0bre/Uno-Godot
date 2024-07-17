@@ -7,3 +7,4 @@ script = ExtResource("1_rip0g")
 type = "Normal"
 color = Color(1, 1, 0, 1)
 number = 9
+texture = 38

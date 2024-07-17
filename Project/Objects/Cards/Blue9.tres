@@ -7,3 +7,4 @@ script = ExtResource("1_kuhoq")
 type = "Normal"
 color = Color(0, 0.0666667, 1, 1)
 number = 9
+texture = 40

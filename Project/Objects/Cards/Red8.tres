@@ -7,3 +7,4 @@ script = ExtResource("1_jn80m")
 type = "Normal"
 color = Color(1, 0, 0, 1)
 number = 8
+texture = 33

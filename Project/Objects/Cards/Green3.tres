@@ -7,3 +7,4 @@ script = ExtResource("1_lj275")
 type = "Normal"
 color = Color(0, 0.776471, 0, 1)
 number = 3
+texture = 15

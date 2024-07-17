@@ -7,3 +7,4 @@ script = ExtResource("1_2uesv")
 type = "Normal"
 color = Color(1, 1, 0, 1)
 number = 4
+texture = 18

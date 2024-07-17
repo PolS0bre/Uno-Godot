@@ -4,7 +4,7 @@ class_name Card
 @export var type : String
 @export var color : Color
 @export var number : int
-# @export var texture : Image
+@export var texture : int
 
 func ability():
 	match type:
