@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://uinku5gkscnq"]
+
+[ext_resource type="Script" path="res://Scripts/CardsBBDD.gd" id="1_tkjx4"]
+
+[resource]
+script = ExtResource("1_tkjx4")
+type = "Normal"
+color = Color(1, 1, 0, 1)
+number = 3
