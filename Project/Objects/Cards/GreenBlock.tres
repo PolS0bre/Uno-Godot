@@ -6,5 +6,5 @@
 script = ExtResource("1_giv25")
 type = "Block"
 color = Color(0, 0.776471, 0, 1)
-number = 0
+number = 10
 texture = 43

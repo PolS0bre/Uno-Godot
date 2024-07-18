@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/HandCards.gd" id="1_atre6"]
 [ext_resource type="Texture2D" uid="uid://dy8v1ei1hlunp" path="res://Sprites/Cards.png" id="1_yshbe"]
 
-[sub_resource type="Animation" id="Animation_iriao"]
-resource_name = "Select"
+[sub_resource type="Animation" id="Animation_s5rjq"]
+resource_name = "Deselect"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -16,7 +16,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(42, 62), Vector2(42, 13)]
+"values": [Vector2(42, 13), Vector2(42, 62)]
 }
 
 [sub_resource type="Animation" id="Animation_x5dxb"]
@@ -34,8 +34,8 @@ tracks/0/keys = {
 "values": [Vector2(42, 62)]
 }
 
-[sub_resource type="Animation" id="Animation_s5rjq"]
-resource_name = "Deselect"
+[sub_resource type="Animation" id="Animation_iriao"]
+resource_name = "Select"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -47,7 +47,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(42, 13), Vector2(42, 62)]
+"values": [Vector2(42, 62), Vector2(42, 13)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c7n5o"]
@@ -79,6 +79,7 @@ hframes = 8
 vframes = 10
 
 [node name="BodyCol" type="Area2D" parent="."]
+position = Vector2(45, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BodyCol"]
 position = Vector2(-3.5, -4.5)

@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqlwodu7n7cin"]
+[gd_scene load_steps=5 format=3 uid="uid://dqlwodu7n7cin"]
 
 [ext_resource type="PackedScene" uid="uid://h4cwnfxdbmqi" path="res://Objects/deck.tscn" id="1_3uvyg"]
 [ext_resource type="PackedScene" uid="uid://d2ora11l4sbfp" path="res://Objects/played_cards.tscn" id="2_e61xg"]
 [ext_resource type="Script" path="res://Scripts/Hand.gd" id="3_8nam8"]
+[ext_resource type="Texture2D" uid="uid://dsrtq3x0sfuid" path="res://Sprites/uno_bg.jpg" id="4_q0e44"]
 
 [node name="Game Scene" type="Node2D"]
 
 [node name="Deck" parent="." instance=ExtResource("1_3uvyg")]
-position = Vector2(225, 325)
+offset_left = 104.0
+offset_top = 222.0
+offset_right = 104.0
+offset_bottom = 222.0
 
 [node name="Played Cards" parent="." instance=ExtResource("2_e61xg")]
 position = Vector2(598, 325)
@@ -15,32 +19,59 @@ position = Vector2(598, 325)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="PlayerContainer" type="HBoxContainer" parent="UI"]
+layout_direction = 1
 anchors_preset = -1
 anchor_left = 0.136285
-anchor_top = 0.731481
+anchor_top = 0.614198
 anchor_right = 0.874132
-anchor_bottom = 0.964506
+anchor_bottom = 1.07562
+offset_left = 6.0
+offset_top = 61.0
+offset_right = 6.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_horizontal = 3
 alignment = 1
 script = ExtResource("3_8nam8")
 metadata/_edit_use_anchors_ = true
 
 [node name="IAContainer" type="HBoxContainer" parent="UI"]
+layout_direction = 1
 anchors_preset = -1
-anchor_left = 0.136285
-anchor_top = 0.731481
-anchor_right = 0.874132
-anchor_bottom = 0.964506
-offset_left = 864.0
-offset_top = -304.0
-offset_right = 864.0
-offset_bottom = -304.0
+anchor_left = 0.148437
+anchor_top = -0.0524657
+anchor_right = 0.886
+anchor_bottom = 0.361
+offset_left = 842.001
+offset_top = 189.998
+offset_right = 842.328
+offset_bottom = 190.072
 grow_horizontal = 2
 grow_vertical = 0
 rotation = 3.14159
+size_flags_horizontal = 3
 alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="UnoBg" type="Sprite2D" parent="."]
+z_index = -20
+position = Vector2(576.5, 330)
+scale = Vector2(0.455859, 0.465278)
+texture = ExtResource("4_q0e44")
+
+[node name="Panel" type="Panel" parent="UnoBg"]
+modulate = Color(1, 1, 1, 0.847059)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1280.0
+offset_top = -720.0
+offset_right = -1280.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="mouse_entered" from="UI/PlayerContainer" to="UI/PlayerContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/PlayerContainer" to="UI/PlayerContainer" method="_on_mouse_exited"]

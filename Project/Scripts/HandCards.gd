@@ -11,7 +11,6 @@ func _on_mouse_entered():
 	if fromPlayer:
 		$AnimationPlayer.play("Select")
 		cardHighlighted = true
-		set_start_pos()
 
 func _on_mouse_exited():
 	if fromPlayer:
@@ -21,12 +20,17 @@ func _on_mouse_exited():
 func _on_gui_input(event):
 	if (event is InputEventMouseButton) and (event.button_index == 1) and (fromPlayer):
 		if event.button_mask == 1:
+			set_start_pos()
 			picked = true
 		elif event.button_mask == 0:
 			if inZone:
-				#Check if color == 
-				GameManager.PlayedCards.push_back(cardObj)
-				hand_card_delete()
+				if cardObj.color == GameManager.PlayedCards.back().color || cardObj.number == GameManager.PlayedCards.back().number:
+					GameManager.PlayedCards.push_back(cardObj)
+					#GameManager.PlayerTurn = !GameManager.PlayerTurn
+					hand_card_delete()
+				else:
+					picked = false
+					self.global_position = startPosition
 			else:
 				picked = false
 				self.global_position = startPosition
@@ -39,7 +43,7 @@ func _ready():
 	if get_parent().name == "IAContainer":
 		$CardSprite.frame = 0
 		fromPlayer = false
-	#if card in IAContainer -> Card.frame = 0
+	# if card in IAContainer -> Card.frame = 0
 
 func set_start_pos():
 	startPosition = self.global_position

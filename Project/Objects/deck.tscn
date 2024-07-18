@@ -4,17 +4,36 @@
 [ext_resource type="Texture2D" uid="uid://dy8v1ei1hlunp" path="res://Sprites/Cards.png" id="1_nbl4m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jh4if"]
-size = Vector2(33, 49)
+size = Vector2(30.4, 48)
 
-[node name="Deck" type="StaticBody2D"]
+[node name="Deck" type="Container"]
+offset_left = -102.0
+offset_top = -100.0
+offset_right = -26.0
+offset_bottom = -20.0
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_jim0r")
 
 [node name="ReverseDeck" type="Sprite2D" parent="."]
+position = Vector2(40, 40.8)
 texture = ExtResource("1_nbl4m")
 hframes = 8
 vframes = 10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
+[node name="DeckBody" type="Area2D" parent="."]
+position = Vector2(40, 40.4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeckBody"]
+position = Vector2(-1.2, -0.799999)
 shape = SubResource("RectangleShape2D_jh4if")
+
+[node name="Label" type="Label" parent="DeckBody"]
+visible = false
+offset_left = -52.0
+offset_top = -50.8
+offset_right = 50.0
+offset_bottom = -27.8
+text = "PICK A CARD!"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="input_event" from="DeckBody" to="." method="_on_deck_body_input_event"]
