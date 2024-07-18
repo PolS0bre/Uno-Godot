@@ -26,7 +26,7 @@ func _on_gui_input(event):
 			if inZone:
 				if cardObj.color == GameManager.PlayedCards.back().color || cardObj.number == GameManager.PlayedCards.back().number:
 					GameManager.PlayedCards.push_back(cardObj)
-					#GameManager.PlayerTurn = !GameManager.PlayerTurn
+					GameManager.PlayerTurn = !GameManager.PlayerTurn
 					hand_card_delete()
 				else:
 					picked = false
@@ -41,9 +41,7 @@ func _process(delta):
 
 func _ready():
 	if get_parent().name == "IAContainer":
-		$CardSprite.frame = 0
 		fromPlayer = false
-	# if card in IAContainer -> Card.frame = 0
 
 func set_start_pos():
 	startPosition = self.global_position

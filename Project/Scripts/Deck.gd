@@ -74,8 +74,10 @@ func give_card(hand: Array) -> Object:
 		"AI":
 			currentCard = HandCardObj.instantiate()
 			currentCard.cardObj = last_card
-			currentCard.get_child(1).frame = last_card.texture
+			#currentCard.get_child(1).frame = last_card.texture
+			currentCard.get_child(1).frame = 0
 			IAContainer.add_child(currentCard)
+			print("Card given to IA")
 		_:
 			currentCard = null
 			return last_card
