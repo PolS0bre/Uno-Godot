@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqlwodu7n7cin"]
+[gd_scene load_steps=6 format=3 uid="uid://dqlwodu7n7cin"]
 
 [ext_resource type="PackedScene" uid="uid://h4cwnfxdbmqi" path="res://Objects/deck.tscn" id="1_3uvyg"]
 [ext_resource type="PackedScene" uid="uid://d2ora11l4sbfp" path="res://Objects/played_cards.tscn" id="2_e61xg"]
 [ext_resource type="Script" path="res://Scripts/IA.gd" id="4_8r4ne"]
 [ext_resource type="Texture2D" uid="uid://dsrtq3x0sfuid" path="res://Sprites/uno_bg.jpg" id="4_q0e44"]
+[ext_resource type="PackedScene" uid="uid://br0kydxky1ldi" path="res://Objects/uno.tscn" id="5_1j66k"]
 
 [node name="Game Scene" type="Node2D"]
 
@@ -72,3 +73,9 @@ offset_bottom = -720.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Uno" parent="." instance=ExtResource("5_1j66k")]
+offset_left = 541.0
+offset_top = 293.0
+offset_right = 605.0
+offset_bottom = 333.0

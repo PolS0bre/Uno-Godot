@@ -28,6 +28,7 @@ window/stretch/mode="viewport"
 
 folder_colors={
 "res://Audio/": "blue",
+"res://Font/": "green",
 "res://Objects/": "pink",
 "res://Scenes/": "gray",
 "res://Scripts/": "purple",

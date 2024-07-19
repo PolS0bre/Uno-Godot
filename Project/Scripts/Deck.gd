@@ -55,13 +55,20 @@ func initialize() -> void:
 	
 	container = "Played"
 	give_card(GameManager.PlayedCards)
+	GameManager.gameStarted = true
 	
 
 func _ready():
 	initialize()
 	deckSize = GameManager.PlayerHand.size() + 1
+	GameManager.Scene = "Game"
 
 func give_card(hand: Array) -> Object:
+	if DeckCards.size() < 1:
+				while GameManager.PlayedCards.size() > 1:
+					DeckCards.push_back(GameManager.PlayedCards.pop_front())
+				DeckCards.shuffle()
+	
 	var last_card = DeckCards.pop_back()
 	hand.push_back(last_card)
 	var currentCard
@@ -74,10 +81,8 @@ func give_card(hand: Array) -> Object:
 		"AI":
 			currentCard = HandCardObj.instantiate()
 			currentCard.cardObj = last_card
-			#currentCard.get_child(1).frame = last_card.texture
 			currentCard.get_child(1).frame = 0
 			IAContainer.add_child(currentCard)
-			print("Card given to IA")
 		_:
 			currentCard = null
 			return last_card
@@ -131,3 +136,4 @@ func _on_deck_body_input_event(viewport, event, shape_idx):
 					DeckCards.push_back(GameManager.PlayedCards.pop_front())
 				DeckCards.shuffle()
 			
+			GameManager.PlayerTurn = !GameManager.PlayerTurn

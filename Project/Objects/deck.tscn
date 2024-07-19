@@ -1,10 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://h4cwnfxdbmqi"]
+[gd_scene load_steps=6 format=3 uid="uid://h4cwnfxdbmqi"]
 
 [ext_resource type="Script" path="res://Scripts/Deck.gd" id="1_jim0r"]
 [ext_resource type="Texture2D" uid="uid://dy8v1ei1hlunp" path="res://Sprites/Cards.png" id="1_nbl4m"]
+[ext_resource type="FontFile" uid="uid://cihva4namddxq" path="res://Font/cabin-condensed/CabinCondensed-SemiBold.ttf" id="3_u164s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jh4if"]
 size = Vector2(30.4, 48)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sxm7w"]
+font = ExtResource("3_u164s")
+font_size = 20
+font_color = Color(1, 1, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(1, 0, 0, 0.72549)
+shadow_offset = Vector2(0, 0)
 
 [node name="Deck" type="Container"]
 offset_left = -102.0
@@ -34,6 +45,7 @@ offset_top = -50.8
 offset_right = 50.0
 offset_bottom = -27.8
 text = "PICK A CARD!"
+label_settings = SubResource("LabelSettings_sxm7w")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="input_event" from="DeckBody" to="." method="_on_deck_body_input_event"]

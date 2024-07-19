@@ -22,12 +22,23 @@ func _process(delta):
 			deck.container = "AI"
 			var newCard = deck.give_card(GameManager.IAHand)
 			newCard.fromPlayer = false
+			GameManager.PlayerTurn = !GameManager.PlayerTurn
 		else:
+			var obj = deck.IAContainer.get_child(selectedIndex)
 			GameManager.IAHand.remove_at(selectedIndex)
 			isChoosing = true
 			await get_tree().create_timer(1.0).timeout
 			GameManager.PlayedCards.push_back(choosenCard)
-			var obj = deck.IAContainer.get_child(selectedIndex)
-			obj.queue_free()
 			isChoosing = false
-			GameManager.PlayerTurn = !GameManager.PlayerTurn
+			if choosenCard.number == 10:
+				GameManager.PlayerTurn = false
+			else:
+				GameManager.PlayerTurn = !GameManager.PlayerTurn
+			
+			if obj != null:
+				obj.queue_free()
+			else:
+				print("Object is null?")
+			
+			if GameManager.IAHand.size() == 1:
+				$"../../Uno".get_child(0).play("uno")

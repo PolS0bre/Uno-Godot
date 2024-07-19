@@ -26,8 +26,14 @@ func _on_gui_input(event):
 			if inZone:
 				if cardObj.color == GameManager.PlayedCards.back().color || cardObj.number == GameManager.PlayedCards.back().number:
 					GameManager.PlayedCards.push_back(cardObj)
-					GameManager.PlayerTurn = !GameManager.PlayerTurn
+					if cardObj.number == 10:
+						GameManager.PlayerTurn = true
+					else:
+						GameManager.PlayerTurn = !GameManager.PlayerTurn
 					hand_card_delete()
+					
+					if GameManager.PlayerHand.size() == 1:
+						$"../../../Uno".get_child(0).play("uno")
 				else:
 					picked = false
 					self.global_position = startPosition
