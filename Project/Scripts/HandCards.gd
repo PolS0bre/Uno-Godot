@@ -18,7 +18,7 @@ func _on_mouse_exited():
 		cardHighlighted = false
 
 func _on_gui_input(event):
-	if (event is InputEventMouseButton) and (event.button_index == 1) and (fromPlayer):
+	if (event is InputEventMouseButton) and (event.button_index == 1) and (fromPlayer) and (GameManager.PlayerTurn):
 		if event.button_mask == 1:
 			set_start_pos()
 			picked = true
@@ -34,6 +34,9 @@ func _on_gui_input(event):
 					
 					if GameManager.PlayerHand.size() == 1:
 						$"../../../Uno".get_child(0).play("uno")
+						$"../../../SFX".stream = load("res://Audio/SFXs/UNO.mp3")
+						$"../../../SFX".play()
+					
 				else:
 					picked = false
 					self.global_position = startPosition

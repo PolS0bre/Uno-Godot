@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://xfq0ecj7d84e"]
+[gd_scene load_steps=10 format=3 uid="uid://xfq0ecj7d84e"]
 
 [ext_resource type="Script" path="res://Scripts/MenuManager.gd" id="1_c1sxy"]
 [ext_resource type="FontFile" uid="uid://y0436346v8mb" path="res://Font/cabin-condensed/CabinCondensed-Bold.ttf" id="2_qoi68"]
 [ext_resource type="FontFile" uid="uid://c51gcbfvm357n" path="res://Font/cabin-condensed/CabinCondensed-Regular.ttf" id="3_nw8ni"]
 [ext_resource type="Texture2D" uid="uid://cupo0dkhbkqs6" path="res://Sprites/Button.png" id="4_8vyjh"]
 [ext_resource type="Texture2D" uid="uid://b64bjalo1sxtq" path="res://Sprites/end_img.jpg" id="4_fq546"]
+[ext_resource type="AudioStream" uid="uid://cdt06vwtjlrna" path="res://Audio/Music/Menu Music.mp3" id="6_ef1on"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ye82"]
 font = ExtResource("2_qoi68")
@@ -81,6 +82,14 @@ offset_bottom = -978.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ef1on")
+autoplay = true
+bus = &"Music"
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

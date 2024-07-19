@@ -2,34 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://cgtqjmiaqekm5" path="res://Sprites/Uno action.png" id="1_0xkvn"]
 
-[sub_resource type="Animation" id="Animation_1683i"]
-resource_name = "uno"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.1, 0.1), Vector2(3, 3)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
 [sub_resource type="Animation" id="Animation_grp3j"]
 length = 0.001
 tracks/0/type = "value"
@@ -56,6 +28,46 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
+
+[sub_resource type="Animation" id="Animation_1683i"]
+resource_name = "uno"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(10, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4elvh"]
 _data = {
@@ -65,15 +77,16 @@ _data = {
 
 [node name="Uno" type="TextureRect"]
 visible = false
+z_index = 20
 anchors_preset = -1
 anchor_left = -0.0269097
 anchor_top = -0.0262346
 anchor_right = 0.0286458
 anchor_bottom = 0.0354938
-offset_left = -70.0
-offset_top = -39.0
-offset_right = -70.0
-offset_bottom = -39.0
+offset_left = -303.0
+offset_top = -167.0
+offset_right = -303.0
+offset_bottom = -167.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_0xkvn")
 metadata/_edit_use_anchors_ = true

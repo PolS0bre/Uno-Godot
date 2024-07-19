@@ -72,6 +72,11 @@ func give_card(hand: Array) -> Object:
 	var last_card = DeckCards.pop_back()
 	hand.push_back(last_card)
 	var currentCard
+	
+	if $"../SFX".is_playing() == false:
+		$"../SFX".stream = load("res://Audio/SFXs/Give Card.mp3")
+		$"../SFX".play()
+	
 	match container:
 		"Player":
 			currentCard = HandCardObj.instantiate()

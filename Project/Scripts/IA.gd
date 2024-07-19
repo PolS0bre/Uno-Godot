@@ -42,3 +42,5 @@ func _process(delta):
 			
 			if GameManager.IAHand.size() == 1:
 				$"../../Uno".get_child(0).play("uno")
+				$"../../SFX".stream = load("res://Audio/SFXs/UNO.mp3")
+				$"../../SFX".play()
