@@ -1,11 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqlwodu7n7cin"]
+[gd_scene load_steps=9 format=3 uid="uid://dqlwodu7n7cin"]
 
 [ext_resource type="PackedScene" uid="uid://h4cwnfxdbmqi" path="res://Objects/deck.tscn" id="1_3uvyg"]
 [ext_resource type="PackedScene" uid="uid://d2ora11l4sbfp" path="res://Objects/played_cards.tscn" id="2_e61xg"]
 [ext_resource type="Script" path="res://Scripts/IA.gd" id="4_8r4ne"]
 [ext_resource type="Texture2D" uid="uid://dsrtq3x0sfuid" path="res://Sprites/uno_bg.jpg" id="4_q0e44"]
 [ext_resource type="PackedScene" uid="uid://br0kydxky1ldi" path="res://Objects/uno.tscn" id="5_1j66k"]
+[ext_resource type="FontFile" uid="uid://y0436346v8mb" path="res://Font/cabin-condensed/CabinCondensed-Bold.ttf" id="5_rcpvk"]
 [ext_resource type="AudioStream" uid="uid://b1ak7fgkwst06" path="res://Audio/Music/Background Music.mp3" id="6_5dofc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_61xvy"]
+font = ExtResource("5_rcpvk")
+font_size = 45
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 25
+shadow_color = Color(1, 0, 0, 0.603922)
+shadow_offset = Vector2(1, 0)
 
 [node name="Game Scene" type="Node2D"]
 
@@ -61,6 +71,15 @@ size_flags_horizontal = 3
 alignment = 1
 script = ExtResource("4_8r4ne")
 metadata/_edit_use_anchors_ = true
+
+[node name="Turn" type="Label" parent="UI"]
+visible = false
+offset_left = 852.0
+offset_top = 312.0
+offset_right = 1078.0
+offset_bottom = 371.0
+text = "YOUR TURN!"
+label_settings = SubResource("LabelSettings_61xvy")
 
 [node name="UnoBg" type="Sprite2D" parent="."]
 z_index = -20

@@ -23,7 +23,7 @@ func _on_gui_input(event):
 			set_start_pos()
 			picked = true
 		elif event.button_mask == 0:
-			if inZone:
+			if inZone and (GameManager.PlayerTurn):
 				if cardObj.color == GameManager.PlayedCards.back().color || cardObj.number == GameManager.PlayedCards.back().number:
 					GameManager.PlayedCards.push_back(cardObj)
 					if cardObj.number == 10:

@@ -14,7 +14,7 @@ config/name="Uno"
 config/tags=PackedStringArray("v4.2.2")
 run/main_scene="res://Scenes/game_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/Uno Godot Icon.png"
 
 [autoload]
 
@@ -46,3 +46,5 @@ Steal={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

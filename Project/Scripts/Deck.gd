@@ -40,8 +40,8 @@ func initialize() -> void:
 	DeckCards.shuffle()
 	
 	GameManager.PlayerTurn = true
-	#if randi() % 2:
-	#	GameManager.PlayerTurn = false
+	if randi() % 2:
+		GameManager.PlayerTurn = false
 	
 	var NumCards = 7
 	while NumCards > 0:
@@ -95,6 +95,9 @@ func give_card(hand: Array) -> Object:
 
 func _process(delta):
 	if GameManager.PlayerTurn:
+		if $"../UI/Turn".visible == false:
+			$"../UI/Turn".visible = true
+		
 		if deckSize != GameManager.PlayerHand.size():
 			$DeckBody/Label.set_visible(true)
 			hasToPick = true
@@ -106,6 +109,9 @@ func _process(delta):
 			deckSize = GameManager.PlayerHand.size()
 			update_hand_layout()
 	else:
+		if $"../UI/Turn".visible == true:
+			$"../UI/Turn".visible = false
+		
 		hasToPick = false
 		$DeckBody/Label.set_visible(false)
 
