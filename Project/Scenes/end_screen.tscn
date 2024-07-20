@@ -86,10 +86,8 @@ mouse_filter = 2
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_ef1on")
 autoplay = true
-bus = &"Music"
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
-bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -84,7 +84,5 @@ mouse_filter = 2
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_5dofc")
 autoplay = true
-bus = &"Music"
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
-bus = &"SFX"
