@@ -20,6 +20,9 @@ func get_resources_of_class(directory_path: String, class_type: String) -> Array
 	
 	var file_name = dir.get_next()
 	while file_name != "":
+		if file_name.ends_with(".remap"):
+			file_name = file_name.replace(".remap", "")
+		
 		if file_name.ends_with(".tres"):
 			var resource_path = directory_path + "/" + file_name
 			var resource = ResourceLoader.load(resource_path)
@@ -35,7 +38,7 @@ func get_resources_of_class(directory_path: String, class_type: String) -> Array
 	return resources
 
 func initialize() -> void:
-	DeckCards = get_resources_of_class("res://Objects/Cards", "Card")
+	DeckCards = get_resources_of_class("res://Objects/Cards", "Card")	
 	randomize()
 	DeckCards.shuffle()
 	
